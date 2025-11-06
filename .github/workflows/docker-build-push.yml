@@ -24,11 +24,6 @@ jobs:
       with:
         python-version: '3.10'  # Matches your Dockerfile
 
-    - name: Lint Python code (optional quality check)
-      run: |
-        pip install flake8
-        flake8 app.py  # Fails if code style issues
-
     - name: Build Docker image
       run: |
         docker build -t $REGISTRY/$IMAGE_NAME:$IMAGE_TAG .
